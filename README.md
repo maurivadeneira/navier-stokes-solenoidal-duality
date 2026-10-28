@@ -34,3 +34,16 @@ coupled with the cylindrical solenoidal identity $\partial_z \omega_z + \frac{1}
 3. **The Solenoidal Constraint $\nabla \cdot \boldsymbol{\omega} = 0$ in Local Vortex Coordinates**
 4. **Quantitative Duality Between Axial Localization ($L$) and Directional Curvature ($|\nabla \boldsymbol{\xi}|$)**
 5. **Energy-Enstrophy Compatibility and Exclusion of Self-Similar Neck Collapse**
+
+Iniciamos desde cero el desarrollo de un nuevo paper de Matemática Pura sobre las ecuaciones clásicas incompresibles de Navier-Stokes en R^3:
+∂_t u + (u · ∇)u = -∇p + ν Δu, con ∇ · u = 0 y dato inicial suave de energía finita E_0.
+
+Regla estricta de este proyecto: Cero hipótesis físicas externas (no usamos corte espectral Λ ni tiempo de relajación τ). Trabajamos exclusivamente con análisis funcional, geometría diferencial y cálculo vectorial exacto sobre la ecuación clásica.
+
+El objetivo es desarrollar rigurosamente la "Dualidad Geométrica Cuello-Curvatura" para acorralar por reducción al absurdo el colapso puntual (tipo reloj de arena) usando tres herramientas exactas:
+1. La conservación de volumen Lagrangiano (∇ · u = 0) y la identidad global de Leray: (1/2)||u(t)||_{L^2}^2 + ν ∫_0^t ||ω(s)||_{L^2}^2 ds = E_0.
+2. La condición solenoidal exacta de la vorticidad: ∇ · ω = ∇ · (∇ × u) ≡ 0, que prohíbe que las líneas de vorticidad nazcan o mueran en el cuello de radio r -> 0 y obliga a que ∂_z ω_z = -(1/r) ∂_r(r ω_r).
+3. La identidad exacta de descomposición ortogonal de la disipación de enstrofía (conectada al criterio de Constantin-Fefferman con ξ = ω / |ω|):
+   |∇ω|^2 = |∇|ω||^2 + |ω|^2 |∇ξ|^2.
+
+Arranquemos por la Sección 2: demostremos paso a paso y con rigor algebraico absoluto la identidad puntual |∇ω|^2 = |∇|ω||^2 + |ω|^2 |∇ξ|^2 y conectémosla con ∇ · ω = 0 para acotar inferiormente |∇ξ|^2 en función de la escala axial L y radial r del tubo.
