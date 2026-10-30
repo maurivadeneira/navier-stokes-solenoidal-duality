@@ -1,8 +1,16 @@
 # Dualidad de Vorticidad Solenoidal y Cotas de Curvatura de Cuello en las Ecuaciones de Navier-Stokes Incompresibles 3D
 
 **Autor:** Mauricio Rivadeneira Mora  
-**Documento:** Manuscrito Técnico Completo (Matemática Pura)
+**Documento:** Manuscrito Técnico Completo (Análisis Matemático Puro)  
+**Fecha:** Octubre de 2026  
 
+---
+
+## Resumen
+
+Este trabajo investiga la exclusión analítica de la explosión en tiempo finito (*finite-time blow-up*) en las ecuaciones clásicas tridimensionales e incompresibles de Navier-Stokes sobre $\mathbb{R}^3$. Sin invocar regularizaciones físicas externas ni alterar la formulación clásica, establecemos una reducción al absurdo (*reductio ad absurdum*) estrictamente geométrica y funcional basada en la imposición simultánea de las dos restricciones libres de divergencia del sistema: la conservación del volumen isocórico ($\nabla \cdot \mathbf{u} = 0$) y la condición solenoidal de la vorticidad ($\nabla \cdot \boldsymbol{\omega} = 0$). Mediante la descomposición ortogonal exacta de la disipación de enstrofía ($|\nabla \boldsymbol{\omega}|^2 = |\nabla |\boldsymbol{\omega}||^2 + |\boldsymbol{\omega}|^2 |\nabla \boldsymbol{\xi}|^2$) y un análisis riguroso de tubos de vorticidad con circulación invariante controlada viscosamente, demostramos que cualquier contracción transversal hipotética hacia una escala de cuello $r_0(t) \le C_r(T^* - t)^{1/2}$ fuerza una expansión geométrica longitudinal no integrable de las líneas de flujo. Esto desencadena una divergencia temporal insalvable en la disipación de curvatura direccional que contradice directamente la cota global de energía de Leray ($E_0 < \infty$), excluyendo así el colapso autosemejante de cuello.
+
+**Palabras clave:** Ecuaciones de Navier-Stokes, Análisis Matemático, Vorticidad Solenoidal, Disipación de Enstrofía, Regularidad Global.
 ---
 
 ## 1. Introducción y Formulación Clásica en $\mathbb{R}^3$
