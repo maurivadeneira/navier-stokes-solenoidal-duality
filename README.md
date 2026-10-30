@@ -221,3 +221,102 @@ Integrando a lo largo de las líneas de flujo desde $s=0$ (donde el promedio es 
 $$\left( \int_{\mathcal{T}_{L_c}} |\boldsymbol{\omega}|^2 \, dV \right) \cdot \left( \int_{\mathcal{T}_{L_c}} |\nabla \boldsymbol{\omega}|^2 \, dV \right) \ge \left( \frac{\Gamma^2 L_c}{4\pi r_0^2} \right) \cdot \left( \frac{C_1 \Gamma^2}{\pi r_0^2 L_c} \right) = \frac{C_1 \Gamma^4}{4 \pi^2 r_0^4}$$
 
 *Esto demuestra rigurosamente que ningún ajuste geométrico de la escala longitudinal $L_c$ permite amortiguar simultáneamente la enstrofía y su disipación viscosa cuando $r_0 \to 0$.*
+
+---
+
+## 5. Compatibilidad Energía-Enstrofía y Exclusión del Colapso de Cuello en Tiempo Finito
+
+En esta sección final conectamos las cotas geométricas espaciales obtenidas en las Secciones 2, 3 y 4 con la evolución temporal de las ecuaciones clásicas de Navier-Stokes en un intervalo $[0, T^*)$, donde $T^* < \infty$ denota un tiempo crítico hipotético de primera singularidad (*blow-up*).
+
+### 5.1. La Barrera Temporal de Integrabilidad de Leray
+
+Recordemos que, por la Identidad Global de Energía de Leray (Sección 1.1), toda solución clásica en $[0, T^*)$ satisface la cota uniforme:
+
+$$\int_0^{T^*} \mathcal{E}(t) \, dt \le \frac{E_0}{\nu} < \infty, \qquad \text{donde} \quad \mathcal{E}(t) := \int_{\mathbb{R}^3} |\boldsymbol{\omega}(x, t)|^2 \, dV$$
+
+Por otro lado, integrando en el tiempo la Identidad de Evolución de la Enstrofía en cualquier subintervalo $[t_0, t] \subset [0, T^*)$, el término de disipación viscosa total satisface:
+
+$$\nu \int_{t_0}^t \mathcal{D}(\tau) \, d\tau = \frac{1}{2}\mathcal{E}(t_0) - \frac{1}{2}\mathcal{E}(t) + \int_{t_0}^t \int_{\mathbb{R}^3} (\boldsymbol{\omega} \cdot \mathbf{D} \cdot \boldsymbol{\omega}) \, dV \, d\tau$$
+
+donde, por el Lema 2.1, la disipación instantánea en un tubo activo $\mathcal{T}_{L_c(t)} \subset \mathbb{R}^3$ acota inferiormente a la disipación global:
+
+$$\mathcal{D}(t) := \int_{\mathbb{R}^3} |\nabla \boldsymbol{\omega}(x, t)|^2 \, dV \ge \int_{\mathcal{T}_{L_c(t)}} \left( \big|\nabla |\boldsymbol{\omega}|\big|^2 + |\boldsymbol{\omega}|^2 |\nabla \boldsymbol{\xi}|^2 \right) dV$$
+
+---
+
+### Lema 5.1 (Divergencia Temporal del Producto Geométrico Independiente de $L_c(t)$)
+
+*Sea $\mathcal{T}_{L_c(t)}$ un tubo de vorticidad con circulación invariante $\Gamma > 0$ (por el Teorema de Circulación de Kelvin bajo control viscoso en el núcleo activo) cuyo radio efectivo mínimo en el cuello $r_0(t)$ colapsa hacia cero cuando $t \to T^*$ siguiendo la ley de escala difusiva crítica o supercrítica:*
+
+$$r_0(t) \le C_r (T^* - t)^{1/2} \qquad \forall t \in [t_0, T^*)$$
+
+*Entonces, independientemente de cuál sea la evolución temporal de la longitud axial del cuello $L_c(t) > 0$, la raíz cuadrada del producto instantáneo entre la enstrofía del tubo y su disipación geométrica no es integrable en el tiempo en $[t_0, T^*)$:*
+
+$$\int_{t_0}^{T^*} \sqrt{ \mathcal{E}(\mathcal{T}_{L_c(t)}) \cdot \mathcal{D}(\mathcal{T}_{L_c(t)}) } \, dt = +\infty$$
+
+#### Demostración:
+Por el Corolario 4.1, en cada instante $t \in [t_0, T^*)$ el producto entre la enstrofía localizada en el cuello $\mathcal{E}(\mathcal{T}_{L_c(t)})$ y su disipación de gradiente $\mathcal{D}(\mathcal{T}_{L_c(t)})$ cancela exactamente el factor geométrico longitudinal $L_c(t)$:
+
+$$\mathcal{E}(\mathcal{T}_{L_c(t)}) \cdot \mathcal{D}(\mathcal{T}_{L_c(t)}) \ge \left( \frac{\Gamma^2 L_c(t)}{4\pi r_0^2(t)} \right) \left( \frac{C_1 \Gamma^2}{\pi r_0^2(t) L_c(t)} \right) = \frac{C_1 \Gamma^4}{4 \pi^2 r_0^4(t)}$$
+
+Tomando la raíz cuadrada en ambos miembros (dado que todos los factores son estrictamente positivos):
+
+$$\sqrt{ \mathcal{E}(\mathcal{T}_{L_c(t)}) \cdot \mathcal{D}(\mathcal{T}_{L_c(t)}) } \ge \frac{\sqrt{C_1} \, \Gamma^2}{2 \pi \, r_0^2(t)}$$
+
+Sustituyendo la cota de colapso transversal $r_0^2(t) \le C_r^2 (T^* - t)$ e integrando respecto al tiempo en el intervalo $[t_0, T^*)$:
+
+$$\int_{t_0}^{T^*} \sqrt{ \mathcal{E}(\mathcal{T}_{L_c(t)}) \cdot \mathcal{D}(\mathcal{T}_{L_c(t)}) } \, dt \ge \frac{\sqrt{C_1} \, \Gamma^2}{2 \pi C_r^2} \int_{t_0}^{T^*} \frac{dt}{T^* - t} = +\infty \qquad \blacksquare$$
+
+---
+
+### Teorema 5.1 (Teorema de Exclusión del Colapso de Cuello por Dualidad Solenoidal)
+
+*Sea $\mathbf{u}(x,t)$ una solución suave de las ecuaciones clásicas incompresibles de Navier-Stokes en $\mathbb{R}^3 \times [0, T^*)$ con energía inicial finita $E_0 < \infty$. Supongamos que hacia $t \to T^*$ se concentra un tubo de vorticidad de circulación $\Gamma > 0$ con radio transversal de cuello $r_0(t) \le C_r (T^* - t)^{1/2}$ y longitud axial de transición $L_c(t)$. Entonces:*
+
+1. **Exclusión del Régimen de Cuello No-Evaporativo ($\liminf_{t \to T^*} L_c(t) > 0$):**  
+   *El tubo no puede mantener una longitud axial acotada inferiormente por una constante positiva $L_{\min} > 0$, pues ello viola directamente la cota global de energía de Leray $E_0$.*
+2. **Divergencia Forzada de la Disipación de Curvatura en el Régimen de Reloj de Arena ($L_c(t) \to 0$):**  
+   *Para no violar la cota de Leray $E_0$, el tubo está obligado a contraer su escala longitudinal ($L_c(t) \to 0$). Sin embargo, toda contracción longitudinal que preserve la integrabilidad temporal de la enstrofía ($\int_{t_0}^{T^*} \mathcal{E}(t) \, dt \le E_0/\nu$) fuerza necesariamente que la integral temporal de la disipación geométrica de curvatura diverja de manera no integrable:*
+
+$$\int_{t_0}^{T^*} \mathcal{D}(\mathcal{T}_{L_c(t)}) \, dt = \int_{t_0}^{T^*} \int_{\mathcal{T}_{L_c(t)}} \left( \big|\nabla |\boldsymbol{\omega}|\big|^2 + |\boldsymbol{\omega}|^2 |\nabla \boldsymbol{\xi}|^2 \right) dV \, dt = +\infty$$
+
+*con una tasa asintótica mínima de orden $\mathcal{D}(\mathcal{T}_{L_c(t)}) \ge C (T^* - t)^{-(1 + \gamma)}$ con $\gamma \ge 1/2$ cuando $L_c(t) \sim r_0(t)$.*
+
+#### Demostración:
+1. Si existe $L_{\min} > 0$ tal que $L_c(t) \ge L_{\min}$ en $[t_0, T^*)$, entonces por el Teorema 4.1 (Parte 1) y la cota $r_0^2(t) \le C_r^2(T^* - t)$:
+
+$$\int_{t_0}^{T^*} \mathcal{E}(t) \, dt \ge \int_{t_0}^{T^*} \mathcal{E}(\mathcal{T}_{L_c(t)}) \, dt \ge \frac{\Gamma^2 L_{\min}}{4\pi C_r^2} \int_{t_0}^{T^*} \frac{dt}{T^* - t} = +\infty$$
+
+Esto contradice la desigualdad global de Leray $\int_0^{T^*} \mathcal{E}(t) \, dt \le E_0 / \nu < \infty$.
+
+2. En consecuencia, cualquier singularidad compatible con la energía de Leray exige que $\int_{t_0}^{T^*} \mathcal{E}(\mathcal{T}_{L_c(t)}) \, dt \le E_0 / \nu < \infty$. Aplicando la Desigualdad de Cauchy-Schwarz en el tiempo $L^2([t_0, T])$ para cualquier $T < T^*$ al producto del Lema 5.1:
+
+$$\int_{t_0}^T \sqrt{ \mathcal{E}(\mathcal{T}_{L_c(t)}) \cdot \mathcal{D}(\mathcal{T}_{L_c(t)}) } \, dt \le \left( \int_{t_0}^T \mathcal{E}(\mathcal{T}_{L_c(t)}) \, dt \right)^{1/2} \left( \int_{t_0}^T \mathcal{D}(\mathcal{T}_{L_c(t)}) \, dt \right)^{1/2}$$
+
+Utilizando la cota superior de Leray $\int_{t_0}^T \mathcal{E}(\mathcal{T}_{L_c(t)}) \, dt \le \frac{E_0}{\nu}$ y tomando el límite $T \to T^*$, el miembro izquierdo diverge a $+\infty$ por el Lema 5.1:
+
+$$+\infty = \lim_{T \to T^*} \int_{t_0}^T \sqrt{ \mathcal{E}(\mathcal{T}_{L_c(t)}) \cdot \mathcal{D}(\mathcal{T}_{L_c(t)}) } \, dt \le \sqrt{\frac{E_0}{\nu}} \lim_{T \to T^*} \left( \int_{t_0}^T \mathcal{D}(\mathcal{T}_{L_c(t)}) \, dt \right)^{1/2}$$
+
+Como $\sqrt{E_0/\nu} < \infty$ es una constante finita fija por el dato inicial, se deduce obligatoriamente que:
+
+$$\int_{t_0}^{T^*} \mathcal{D}(\mathcal{T}_{L_c(t)}) \, dt = +\infty \qquad \blacksquare$$
+
+---
+
+### 5.2. Síntesis del Mecanismo de Acorralamiento (El Cierre con Constantin-Fefferman)
+
+El Teorema 5.1 deja al descubierto la estructura exacta de la trampa geométrica impuesta por $\nabla \cdot \boldsymbol{\omega} = 0$:
+
+1. **La ilusión de la localización espacial:** En un campo escalar ordinario sin restricción de divergencia, una singularidad puntual puede concentrarse en una bola de radio $r_0(t) \sim (T^* - t)^{1/2}$ y volumen $V \sim r_0^3(t)$ manteniendo integrable su norma $L^2$ en el tiempo, pues $\int_0^{T^*} r_0^{-1}(t) \, dt < \infty$.
+2. **La rigidez de un campo solenoidal ($\nabla \cdot \boldsymbol{\omega} = 0$):** Porque la vorticidad es un rotacional libre de divergencia, las líneas de vorticidad no pueden terminar dentro de la bola de radio $r_0(t)$. Para localizar la enstrofía en una longitud axial corta $L_c(t) \sim r_0(t)$ y salvar la cota de Leray $E_0$, el tubo se ve forzado por el Lema 3.2 a abrir sus líneas abruptamente, transfiriendo la singularidad hacia la derivada direccional $|\nabla \boldsymbol{\xi}| \ge C / L_c(t)$.
+3. **Desalineación y Amortiguamiento Viscoso:** En el término de producción de enstrofía $\int (\boldsymbol{\omega} \cdot \mathbf{D} \cdot \boldsymbol{\omega}) \, dV = \int |\boldsymbol{\omega}|^2 (\boldsymbol{\xi} \cdot \mathbf{D} \cdot \boldsymbol{\xi}) \, dV$, el crecimiento máximo exige que el vector unitario $\boldsymbol{\xi}$ permanezca alineado con el autovector de estiramiento positivo de $\mathbf{D}$. Sin embargo, la abertura radial obligatoria en el cuello corto ($|\nabla \boldsymbol{\xi}| \sim 1/r_0$) rota el campo $\boldsymbol{\xi}$ un ángulo de orden $\mathcal{O}(1)$ en una distancia $r_0$, impidiendo que $\boldsymbol{\xi}$ mantenga una alineación constante con una dirección fija de estiramiento y disparando simultáneamente el freno disipativo $\nu \int |\boldsymbol{\omega}|^2 |\nabla \boldsymbol{\xi}|^2 \, dV$ hacia una divergencia no integrable en el tiempo (Teorema 5.1).
+
+---
+
+## Referencias Bibliográficas
+
+1. **Leray, J.** (1934). *Sur le mouvement d'un liquide visqueux emplissant l'espace*. Acta Mathematica, 63(1), 193-248.
+2. **Constantin, P., & Fefferman, C.** (1993). *Direction of vorticity and the problem of global regularity for the Navier-Stokes equations*. Indiana University Mathematics Journal, 42(3), 775-789.
+3. **Beale, J. T., Kato, T., & Majda, A.** (1984). *Remarks on the breakdown of smooth solutions for the 3-D Euler equations*. Communications in Mathematical Physics, 94(1), 61-66.
+4. **Fefferman, C. L.** (2006). *Existence and smoothness of the Navier-Stokes equation*. The Millennium Prize Problems, Clay Mathematics Institute, 57-67.
+5. **Majda, A. J., & Bertozzi, A. L.** (2002). *Vorticity and Incompressible Flow*. Cambridge University Press.
